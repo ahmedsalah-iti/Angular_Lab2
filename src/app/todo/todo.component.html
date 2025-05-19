@@ -27,7 +27,7 @@
                          <span class="badge bg-{{todo.status == 'completed' ? 'success' : 'warning'}} text-dark ms-2">{{todo.status}}</span>
                         </div>
                         <div class="btn-group">
-                            <button (click)="toggleStatus(todo.id)" class="btn btn-sm btn-outline-{{todo.status != 'completed' ? 'success' : 'warning'}}">Mark {{ todo.status != "completed" ?  'Completed':'Pending' }}</button>
+                            <button (click)="toggleStatus(todo.id)" [ngClass]="{'btn':true,'btn-sm':true,'btn-outline-success':todo.status == 'pending','btn-outline-warning':todo.status == 'completed'}">Mark {{ todo.status != "completed" ?  'Completed':'Pending' }}</button>
                             <button (click)="deleteTodo(todo.id)" class="btn btn-sm btn-outline-danger">Delete</button>
                         </div>
                     </li>
