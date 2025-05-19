@@ -44,6 +44,19 @@ export class TracksComponentComponent {
     })
   }
 
+getTrackColorByName(trackName: string): string {
+  switch (trackName) {
+    case "OpenSource":
+      return "info";
+    case "PWD":
+      return "success";
+    case "UI/UX":
+      return "warning";
+    default:
+      return "danger";
+  }
+}
+
 }
 type User = {
   id:number,
